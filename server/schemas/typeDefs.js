@@ -1,33 +1,28 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-  type Profile {
+  type Employee {
     _id: ID
     name: String
-    email: String
-    password: String
-    skills: [String]!
+    password: INT
   }
 
   type Auth {
     token: ID!
-    profile: Profile
+    employee: Employee
   }
 
   type Query {
-    profiles: [Profile]!
-    profile(profileId: ID!): Profile
-    # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
-    me: Profile
+    employees: [Employee]!
+    employee(employeeId: ID!): Employee
+    me: Employee
   }
 
   type Mutation {
-    addProfile(name: String!, email: String!, password: String!): Auth
-    login(email: String!, password: String!): Auth
+    addEmployee(name: String!, password:INT!, employeeId:INT!): Auth
+    login(name: String!, password: INT!): Auth
 
-    addSkill(profileId: ID!, skill: String!): Profile
-    removeProfile: Profile
-    removeSkill(skill: String!): Profile
+    removeEmployee: Employee
   }
 `;
 
