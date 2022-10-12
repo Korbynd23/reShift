@@ -20,7 +20,7 @@ const typeDefs = gql`
 
   type Mutation {
     addEmployee(name: String!, password:String!, employeeId: Int!): Employee
-    login(name: String!, password: String!): Employee
+    login(employeeId: Int!, password: String!): Employee
 
     removeEmployee(employeeId: Int!): Employee
   }

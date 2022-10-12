@@ -20,11 +20,11 @@ const resolvers = {
         return employee
         // return { token, employee };
       },
-      login: async (parent, { name, password }) => {
-        const employee = await Employee.findOne({ name, password });
+      login: async (parent, { employeeId, password }) => {
+        const employee = await Employee.findOne({ employeeId });
   
         if (!employee) {
-          throw new AuthenticationError('No employee with this found!');
+          throw new AuthenticationError('No employee with this ID found!');
         }
   
         const correctPw = await employee.isCorrectPassword(password);

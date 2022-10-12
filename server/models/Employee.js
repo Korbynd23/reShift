@@ -35,7 +35,7 @@ employeeSchema.pre('save', async function (next) {
 
 
 employeeSchema.methods.isCorrectPassword = async function (password) {
-  await bcrypt.compare(password, this.password);
+  return bcrypt.compare(password, this.password);
 };
 
 const Employee = mongoose.model('Employee', employeeSchema);
