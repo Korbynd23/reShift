@@ -5,7 +5,11 @@ function Footer() {
 
   return (
     <footer className="footer">
-      <h1>Welcome</h1>
+      <h1>Hi! I am the Footer! </h1>
+
+      <Link to="/adminPage">
+        <button className="">ADMIN</button>
+      </Link>
     </footer>
   );
 }
