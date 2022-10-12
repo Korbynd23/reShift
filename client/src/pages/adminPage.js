@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Footer.css';
+import '../styles/app.css';
 
 function Footer() {
 // Admin page will display all employees with options to addEmployees and removeEmployees. 

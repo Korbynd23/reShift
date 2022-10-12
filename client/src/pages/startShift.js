@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Footer.css';
+import '../styles/app.css';
 
 function Footer() {
 // Start shift same style box as homeLogin page except with 5 face survey and "Start Shift" button. 
