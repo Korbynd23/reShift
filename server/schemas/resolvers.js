@@ -13,34 +13,34 @@ const resolvers = {
       },
     },
   
-    // Mutation: {
-    //   addEmployee: async (parent, { name, password }) => {
-    //     const employee = await Employee.create({ name, password });
-    //     const token = signToken(employee);
+    Mutation: {
+      addEmployee: async (parent, { name, password }) => {
+        const employee = await Employee.create({ name, password });
+        const token = signToken(employee);
   
-    //     return { token, employee };
-    //   },
-    //   login: async (parent, { name, password }) => {
-    //     const employee = await Employee.findOne({ name });
+        return { token, employee };
+      },
+      login: async (parent, { name, password }) => {
+        const employee = await Employee.findOne({ name });
   
-    //     if (!employee) {
-    //       throw new AuthenticationError('No employee with this found!');
-    //     }
+        if (!employee) {
+          throw new AuthenticationError('No employee with this found!');
+        }
   
-    //     const correctPw = await employee.isCorrectPassword(password);
+        const correctPw = await employee.isCorrectPassword(password);
   
-    //     if (!correctPw) {
-    //       throw new AuthenticationError('Incorrect password!');
-    //     }
+        if (!correctPw) {
+          throw new AuthenticationError('Incorrect password!');
+        }
   
-    //     const token = signToken(employee);
-    //     return { token, employee };
-    //   },
+        const token = signToken(employee);
+        return { token, employee };
+      },
   
-    //   removeemployee: async (parent, { employeeId }) => {
-    //     return Employee.findOneAndDelete({ _id: employeeId });
-    //   },
-    // },
+      // removeemployee: async (parent, { employeeId }) => {
+      //   return Employee.findOneAndDelete({ _id: employeeId });
+      // },
+    },
   };
   
   module.exports = resolvers;

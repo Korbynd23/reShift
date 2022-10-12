@@ -18,12 +18,12 @@ const typeDefs = gql`
     me: Employee
   }
 
-  # type Mutation {
-  #   addEmployee(name: String!, password:INT!, employeeId:INT!): Auth
-  #   login(name: String!, password: INT!): Auth
+  type Mutation {
+    addEmployee(name: String!, password:Int!, employeeId:Int!): Employee
+    login(name: String!, password: Int!): Employee
 
-  #   removeEmployee: Employee
-  # }
+    removeEmployee: Employee
+  }
 `;
 
 module.exports = typeDefs;
