@@ -1,4 +1,4 @@
-// const { AuthenticationError } = require('apollo-server-express');
+const { AuthenticationError } = require('apollo-server-express');
 const { Employee } = require('../models');
 // const { signToken } = require('../utils/auth');
 
@@ -9,38 +9,38 @@ const resolvers = {
       },
   
       employee: async (parent, { employeeId }) => {
-        return Employee.findOne({ _id: employeeId });
+        return Employee.findOne({ employeeId: employeeId });
       },
     },
   
-    // Mutation: {
-    //   addEmployee: async (parent, { name, password }) => {
-    //     const employee = await Employee.create({ name, password });
-    //     const token = signToken(employee);
+    Mutation: {
+      addEmployee: async (parent, { name, password, employeeId }) => {
+        const employee = await Employee.create({ name, password, employeeId });
+        // const token = signToken(employee);
+        return employee
+        // return { token, employee };
+      },
+      login: async (parent, { name, password }) => {
+        const employee = await Employee.findOne({ name });
   
-    //     return { token, employee };
-    //   },
-    //   login: async (parent, { name, password }) => {
-    //     const employee = await Employee.findOne({ name });
+        if (!employee) {
+          throw new AuthenticationError('No employee with this found!');
+        }
   
-    //     if (!employee) {
-    //       throw new AuthenticationError('No employee with this found!');
-    //     }
+        const correctPw = await employee.isCorrectPassword(password);
   
-    //     const correctPw = await employee.isCorrectPassword(password);
+        if (!correctPw) {
+          throw new AuthenticationError('Incorrect password!');
+        }
   
-    //     if (!correctPw) {
-    //       throw new AuthenticationError('Incorrect password!');
-    //     }
+        // const token = signToken(employee);
+        // return { token, employee };
+      },
   
-    //     const token = signToken(employee);
-    //     return { token, employee };
-    //   },
-  
-    //   removeemployee: async (parent, { employeeId }) => {
-    //     return Employee.findOneAndDelete({ _id: employeeId });
-    //   },
-    // },
+      removeEmployee: async (parent, { employeeId }) => {
+        return Employee.findOneAndDelete({ employeeId: employeeId });
+      },
+    },
   };
   
   module.exports = resolvers;
