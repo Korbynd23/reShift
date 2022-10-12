@@ -9,7 +9,7 @@ const employeeSchema = new Schema({
     required: true,
     unique: true,
   },
-  employeeName: {
+  name: {
     type: String,
     required: true,
     trim: true,
