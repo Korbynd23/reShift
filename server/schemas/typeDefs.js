@@ -19,7 +19,7 @@ const typeDefs = gql`
   }
 
   # type Mutation {
-  #   addEmployee(name: String!, password:INT!, employeeId:INT!): Auth
+  #   addEmployee(name: String!, password: INT!, employeeId:INT!): Auth
   #   login(name: String!, password: INT!): Auth
 
   #   removeEmployee: Employee
