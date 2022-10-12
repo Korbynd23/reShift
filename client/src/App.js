@@ -8,12 +8,12 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-
-import HomeLogin from './pages/homeLogin';
 import Startshift from './pages/startShift';
 import Endshift from './pages/endShift';
 import Admin from './pages/adminPage';
-import Footer from './pages/Footer'
+import Footer from './components/Footer/Footer'
+import Home from './pages/homeLogin';
+
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -40,21 +40,25 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
+        <div className="">
           <Header />
           <div className="container">
             <Routes>
               <Route 
                 path="/" 
-                element={<HomeLogin />} 
+                element={<Home />} 
               />
               <Route 
-                path="/login" 
-                element={<Login />} 
+                path="/adminPage" 
+                element={<Admin />} 
               />
               <Route 
-                path="/signup" 
-                element={<Signup />} 
+                path="/startShift" 
+                element={<Startshift />} 
+              />
+              <Route 
+                path="/endShift" 
+                element={<Endshift />} 
               />
             </Routes>
           </div>
