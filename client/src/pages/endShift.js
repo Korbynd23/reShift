@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/app.css';
 
 function endShift() {
   // End shift same style box as homeLogin page except with 5 face survey and "End Shift" button. 
