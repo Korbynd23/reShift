@@ -1,5 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/app.css';
+
+// import { useQuery } from '@apollo/client';
+// import { QUERY_EMPLOYEE } from '../utils/queries';
 
 function adminPage() {
   // Admin page will display all employees with options to addEmployees and removeEmployees. 
