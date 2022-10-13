@@ -15,7 +15,6 @@ const employeeSchema = new Schema({
     trim: true,
   },
   password: {
-    // type: Number,
     type: String,
     required: true,
     minlength: 4,
