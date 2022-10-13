@@ -4,7 +4,6 @@ export const ADD_EMPLOYEE = gql`
     mutation addEmployee($employeeId: Int!, $name: String!, $password:Int!) {
         addEmployee(employeeId: $employeeId, name: $name, password: $password) {
             employee {
-            employeeId
             name
             }
         }
@@ -17,3 +16,15 @@ export const REMOVE_EMPLOYEE = gql`
         removeEmployee(Employee: $employeeId)
     }
 `;
+
+export const LOGIN_USER = gql`
+  mutation login($name: String!, $password: String!) {
+    login(name: $name, password: $password) {
+      token
+      employee {
+        name
+      }
+    }
+  }
+`;
+

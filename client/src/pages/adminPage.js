@@ -58,7 +58,7 @@ function adminPage() {
 
 
       {/* Exit button to go back to Home Login */}
-      <Link to="/homeLogin">
+      <Link to="/">
         <button type="button" className="btn btn-danger">Exit</button>
       </Link>
     </div>
@@ -66,3 +66,9 @@ function adminPage() {
 }
 
 export default adminPage;
+
+    // Needs to be used on adminPage to retrieve all employees (8-11)
+    // const { loading, data } = useQuery(QUERY_EMPLOYEE, {
+    //   fetchPolicy: "no-cache"
+    // });
+    // const employeeList = data?.matchups || [];
