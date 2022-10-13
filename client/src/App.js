@@ -8,11 +8,14 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+
 import Startshift from './pages/startShift';
 import Endshift from './pages/endShift';
 import Admin from './pages/adminPage';
 import Footer from './components/Footer/Footer'
 import Home from './pages/homeLogin';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 
 const httpLink = createHttpLink({
