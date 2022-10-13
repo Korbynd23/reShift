@@ -1,6 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { Employee } = require('../models');
-// const { signToken } = require('../utils/auth');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
@@ -8,20 +8,19 @@ const resolvers = {
         return Employee.find();
       },
   
-      employee: async (parent, { employeeId }) => {
-        return Employee.findOne({ employeeId: employeeId });
+      employee: async (parent, { name }) => {
+        return Employee.findOne({ name: name });
       },
     },
   
     Mutation: {
-      addEmployee: async (parent, { name, password, employeeId }) => {
-        const employee = await Employee.create({ name, password, employeeId });
-        // const token = signToken(employee);
-        return employee
-        // return { token, employee };
+      addEmployee: async (parent, { name, password }) => {
+        const employee = await Employee.create({ name, password });
+        const token = signToken(employee);
+        return { token, employee };
       },
-      login: async (parent, { employeeId, password }) => {
-        const employee = await Employee.findOne({ employeeId });
+      login: async (parent, { name, password }) => {
+        const employee = await Employee.findOne({ name });
   
         if (!employee) {
           throw new AuthenticationError('No employee with this ID found!');
@@ -33,13 +32,12 @@ const resolvers = {
           throw new AuthenticationError('Incorrect password!');
         }
   
-        // const token = signToken(employee);
-        // return { token, employee };
-        return employee;
+        const token = signToken(employee);
+        return { token, employee };
       },
   
-      removeEmployee: async (parent, { employeeId }) => {
-        return Employee.findOneAndDelete({ employeeId: employeeId });
+      removeEmployee: async (parent, { name }) => {
+        return Employee.findOneAndDelete({ name: name });
       },
     },
   };
