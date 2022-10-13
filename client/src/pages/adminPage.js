@@ -58,7 +58,7 @@ function adminPage() {
 
 
       {/* Exit button to go back to Home Login */}
-      <Link to="/homeLogin">
+      <Link to="/">
         <button type="button" className="btn btn-danger">Exit</button>
       </Link>
     </div>
