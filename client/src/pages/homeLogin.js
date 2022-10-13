@@ -21,24 +21,20 @@ const Home = () => {
         <p className="card-text">Please Enter Employee Id and Password To Clock In!</p>
         <div>
           <div className="card-header bg-dark text-center">
-            <h1>Welcome to Work!</h1>
-
-          </div>
-          <form>
-            <div className="form-group">
-              <label for="employeeId">Employee Id</label>
-              <input type="employeeId" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"></input>
+            <h1>Welcome to Work!</h1>       
             </div>
-            <div className="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" className="form-control" id="exampleInputPassword1"></input>
-            </div>
-            <button type="button" className="btn btn-primary btn-lg">Clock In</button>
-            <button type="button" className="btn btn-secondary btn-lg">Clock Out</button>
+            <form>
+              <div className="form-group">
+                <label for="employeeId">Employee Id</label>
+                <input type="employeeId" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"></input>
+              </div>
+              <div className="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" className="form-control" id="exampleInputPassword1"></input>
+              </div>
+                <button type="button" className="btn btn-primary btn-lg">Clock In</button>
+                <button type="button" className="btn btn-secondary btn-lg">Clock Out</button>
           </form>
-
-          {/* HERE IS WHERE THE EMPLOYEE INPUT CARD WILL BE */}
-
         </div>
       </div>
     </div>
