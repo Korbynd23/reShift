@@ -10,16 +10,47 @@ function adminPage() {
 
   return (
     <div>
-      <div className="adminTop">
-        <h1>Admin Page</h1>
-      </div>
+      <p className="adminTop"> .
+
+      </p>
 
       <div className='adminBody'>
         <div>
-          <h1>Here is the list of employees</h1>
+          <h2>Employee Roster:</h2>
           {/* <div>employees.length basically </div> */}
           {/* will need to add it so that to the list of Employee's There is an update and delete area on their line  */}
         </div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Employee ID</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Brad</td>
+              <td>Meyer</td>
+              <td>brad</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Tyler</td>
+              <td>Neal</td>
+              <td>Tyler's Forehead</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Kyler</td>
+              <td>th'Lad</td>
+              <td>kyle</td>
+            </tr>
+          </tbody>
+        </table>
 
 
         {/* Button */}
@@ -39,7 +70,7 @@ function adminPage() {
                 <form>
                   <div class="form-group">
                     <label for="recipient-name" class="col-form-label">Employee ID:</label>
-                    <input type="text" class="form-control" id="recipient-name"/>
+                    <input type="text" class="form-control" id="recipient-name" />
                   </div>
                   <div class="form-group">
                     <label for="message-text" class="col-form-label">Employee PIN:</label>
