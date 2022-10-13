@@ -20,8 +20,8 @@ const resolvers = {
         return employee
         // return { token, employee };
       },
-      login: async (parent, { employeeId, password }) => {
-        const employee = await Employee.findOne({ employeeId });
+      login: async (parent, { name, password }) => {
+        const employee = await Employee.findOne({ name });
   
         if (!employee) {
           throw new AuthenticationError('No employee with this ID found!');
@@ -33,9 +33,8 @@ const resolvers = {
           throw new AuthenticationError('Incorrect password!');
         }
   
-        // const token = signToken(employee);
-        // return { token, employee };
-        return employee;
+        const token = signToken(employee);
+        return { token, employee };
       },
   
       removeEmployee: async (parent, { employeeId }) => {
