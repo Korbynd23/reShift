@@ -2,28 +2,44 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
   type Employee {
-    employeeId: Int
     name: String
     password: String
+    # startValues: [startValues]
+    # endValues: [endValues]
   }
 
-  # type Auth {
-  #   token: ID!
+  # type startValues {
+  #   startTimeValue: Int
+  #   createdAt: String
+  #   employee: Employee
+  # }
+  
+  # type endValues {
+  #   endTimeValue: Int
+  #   createdAt: String
   #   employee: Employee
   # }
 
+  type Auth {
+    token: ID!
+    employee: Employee
+  }
+
   type Query {
     employees: [Employee]!
-    employee(employeeId: Int!): Employee
+    employee(name: String): Employee
     me: Employee
   }
 
   type Mutation {
-    addEmployee(name: String!, password:String!, employeeId: Int!): Employee
-    login(employeeId: Int!, password: String!): Employee
-
-    removeEmployee(employeeId: Int!): Employee
+    addEmployee(name: String!, password:String!): Employee
+    login(name: String!, password: String!): Employee
+    removeEmployee(name: String!): Employee
+    # addReactionsStart(startTimeValue: Int!)
+    # addReactionsEnd(endTimeValue: Int!)
   }
+
+
 `;
 
 module.exports = typeDefs;
