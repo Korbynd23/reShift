@@ -7,10 +7,10 @@ const typeDefs = gql`
     password: String
   }
 
-  # type Auth {
-  #   token: ID!
-  #   employee: Employee
-  # }
+  type Auth {
+    token: ID!
+    employee: Employee
+  }
 
   type Query {
     employees: [Employee]!
@@ -21,7 +21,6 @@ const typeDefs = gql`
   type Mutation {
     addEmployee(name: String!, password:String!, employeeId: Int!): Employee
     login(employeeId: Int!, password: String!): Employee
-
     removeEmployee(employeeId: Int!): Employee
   }
 `;
