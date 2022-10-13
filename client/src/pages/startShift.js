@@ -1,6 +1,4 @@
 import React from 'react';
-import '../styles/app.css';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function startShift() {
 // Start shift same style box as homeLogin page except with 5 face survey and "Start Shift" button. 
