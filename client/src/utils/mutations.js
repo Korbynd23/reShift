@@ -22,7 +22,6 @@ export const LOGIN_USER = gql`
     login(name: $name, password: $password) {
       token
       employee {
-        _id
         name
       }
     }

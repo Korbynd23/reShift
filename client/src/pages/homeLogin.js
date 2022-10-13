@@ -34,7 +34,7 @@ const Home = () => {
     } catch (e) {
       console.error(e);
     }
-    
+
 
     // clear form values
     setFormState({
@@ -59,7 +59,7 @@ const Home = () => {
             {data ? (
               <p>
                 Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
+                <Link to="/startShift">back to the homepage.</Link>
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
