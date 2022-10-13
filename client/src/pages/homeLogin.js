@@ -32,8 +32,9 @@ const Home = () => {
 
       {/* HERE IS WHERE THE EMPLOYEE INPUT CARD WILL BE */}
     
-    
     </div>
+    
+    
   );
 };
 
