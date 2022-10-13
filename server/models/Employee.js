@@ -3,33 +3,33 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
 
-const startTimeSchema = new Schema({
-  startTimeValue: {
-    type: Number
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now()
-  },
-  employee: {
-    type: Schema.Types.ObjectId,
-    ref: 'Employee'
-  }
-})
+// const startTimeSchema = new Schema({
+//   startTimeValue: {
+//     type: Number
+//   },
+//   createdAt: {
+//     type: Date,
+//     default: Date.now()
+//   },
+//   employee: {
+//     type: Schema.Types.ObjectId,
+//     ref: 'Employee'
+//   }
+// })
 
-const endTimeSchema = new Schema({
-  endTimeValue: {
-    type: Number
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now()
-  },
-  employee: {
-    type: Schema.Types.ObjectId,
-    ref: 'Employee'
-  }
-})
+// const endTimeSchema = new Schema({
+//   endTimeValue: {
+//     type: Number
+//   },
+//   createdAt: {
+//     type: Date,
+//     default: Date.now()
+//   },
+//   employee: {
+//     type: Schema.Types.ObjectId,
+//     ref: 'Employee'
+//   }
+// })
 
 const employeeSchema = new Schema({
   name: {
@@ -40,11 +40,10 @@ const employeeSchema = new Schema({
   password: {
     type: String,
     required: true,
-    minlength: 4,
-    trim: true
+    minlength: 4
   },
-  startValues: [startTimeSchema],
-  endValues: [endTimeSchema]
+  // startValues: [startTimeSchema],
+  // endValues: [endTimeSchema]
 });
 
 

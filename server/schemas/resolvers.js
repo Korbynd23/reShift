@@ -8,19 +8,19 @@ const resolvers = {
         return Employee.find();
       },
   
-      employee: async (parent, { employeeId }) => {
-        return Employee.findOne({ employeeId: employeeId });
+      employee: async (parent, { name }) => {
+        return Employee.findOne({ name: name });
       },
     },
   
     Mutation: {
-      addEmployee: async (parent, { name, password, employeeId }) => {
-        const employee = await Employee.create({ name, password, employeeId });
+      addEmployee: async (parent, { name, password }) => {
+        const employee = await Employee.create({ name, password });
         const token = signToken(employee);
         return { token, employee };
       },
-      login: async (parent, { employeeId, password }) => {
-        const employee = await Employee.findOne({ employeeId });
+      login: async (parent, { name, password }) => {
+        const employee = await Employee.findOne({ name });
   
         if (!employee) {
           throw new AuthenticationError('No employee with this ID found!');
@@ -36,8 +36,8 @@ const resolvers = {
         return { token, employee };
       },
   
-      removeEmployee: async (parent, { employeeId }) => {
-        return Employee.findOneAndDelete({ employeeId: employeeId });
+      removeEmployee: async (parent, { name }) => {
+        return Employee.findOneAndDelete({ name: name });
       },
     },
   };
