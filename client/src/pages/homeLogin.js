@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
@@ -44,69 +44,66 @@ const Home = () => {
   };
 
 
-    // Will need login box(entail: employeeId and PIN) and 2 buttons: clock in and clock out. Clock out will only work if user is clocked in - if not clock out will display prompt.
-    // Bottom with have an admin button that will prompt sign in and will redirect to admin page with employee queries that will display all employees and an "addEmployee" and "removeEmployee" functions
-    return (
+  // Will need login box(entail: employeeId and PIN) and 2 buttons: clock in and clock out. Clock out will only work if user is clocked in - if not clock out will display prompt.
+  // Bottom with have an admin button that will prompt sign in and will redirect to admin page with employee queries that will display all employees and an "addEmployee" and "removeEmployee" functions
+  return (
 
-      <div className="card text-white bg-dark text-light d-flex justify-content-center vh-100 align-items-center">
-        <div className="card-body">
-          <h5 className="card-title">Welcome To Work!</h5>
-          <p className="card-text">Please Enter Employee Id and Password To Clock In!</p>
-          <div>
-            <div className="card-header bg-dark text-center">
-              <h1>Welcome to Work!</h1>
-            </div>
-            {data ? (
-              <p>
-                Success! You may now head{' '}
-                <Link to="/startShift">back to the homepage.</Link>
-              </p>
-            ) : (
-              <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="Employee Name"
-                  name="name"
-                  type="name"
-                  value={formState.name}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                <button
-                  className="btn btn-primary btn-lg"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                >
-                  Clock In
-                </button>
-                <br></br>
-                <button
-                  className="btn btn-secondary btn-lg"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                >
-                  Clock Out
-                </button>
-              </form>
-            )}
-
-            {error && (
-              <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
-              </div>
-            )}
+    <div className="card text-white bg-dark text-light d-flex justify-content-center vh-100 align-items-center">
+      <div className="card-body">
+        <h5 className="card-title">Welcome To Work!</h5>
+        <p className="card-text">Please Enter Employee Id and Password To Clock In!</p>
+        <div>
+          <div className="card-header bg-dark text-center">
+            <h1>Welcome to Work!</h1>
           </div>
+          {data ? (
+            <Navigate to="/startShift" />
+          ) : (
+            <form onSubmit={handleFormSubmit}>
+              <input
+                className="form-input"
+                placeholder="Employee Name"
+                name="name"
+                type="name"
+                value={formState.name}
+                onChange={handleChange}
+              />
+              <input
+                className="form-input"
+                name="password"
+                type="password"
+                value={formState.password}
+                onChange={handleChange}
+              />
+              <button
+                className="btn btn-primary btn-lg"
+                style={{ cursor: 'pointer' }}
+                type="submit"
+              >
+                Clock In
+              </button>
+              <br></br>
+              <button
+                className="btn btn-secondary btn-lg"
+                style={{ cursor: 'pointer' }}
+                type="submit"
+              >
+                Clock Out
+              </button>
+            </form>
+          )}
+
+          {error && (
+            <div className="my-3 p-3 bg-danger text-white">
+              {error.message}
+            </div>
+          )}
         </div>
       </div>
+    </div>
 
-    );
-  };
+  );
+};
 
 export default Home;
 
