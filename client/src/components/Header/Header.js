@@ -5,11 +5,11 @@ function Header() {
 
   return (
     <header className="header">
-      <h1>Welcome To the Header</h1>
-      
-      <Link to="/homeLogin">
-          {/* <img> Would be the logo on the top of the screen</img> */}
+
+      <Link to="/">
+        <h1 className='text-center'>-Logo-</h1>
       </Link>
+
     </header>
   );
 
