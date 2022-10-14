@@ -4,21 +4,21 @@ const typeDefs = gql`
   type Employee {
     name: String
     password: String
-    # startValues: [startValues]
-    # endValues: [endValues]
+    startValues: [startValues]
+    endValues: [endValues]
   }
 
-  # type startValues {
-  #   startTimeValue: Int
-  #   createdAt: String
-  #   employee: Employee
-  # }
+  type startValues {
+    startTimeValue: Int
+    createdAt: String
+    employee: Employee
+  }
   
-  # type endValues {
-  #   endTimeValue: Int
-  #   createdAt: String
-  #   employee: Employee
-  # }
+  type endValues {
+    endTimeValue: Int
+    createdAt: String
+    employee: Employee
+  }
 
   type Auth {
     token: ID!
@@ -32,11 +32,11 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addEmployee(name: String!, password:String!): Employee
+    addEmployee(name: String!, password:String!): Auth
     login(name: String!, password: String!): Auth
     removeEmployee(name: String!): Employee
-    # addReactionsStart(startTimeValue: Int!): Employee
-    # addReactionsEnd(endTimeValue: Int!): Employee
+    addReactionStart(startTimeValue: Int!): Employee
+    addReactionEnd(endTimeValue: Int!): Employee
   }
 
 
