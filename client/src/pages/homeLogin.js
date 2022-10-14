@@ -1,10 +1,9 @@
-import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
-
 import Auth from '../utils/auth';
-
 import '../styles/app.css';
 
 
@@ -100,6 +99,14 @@ const Home = () => {
             </div>
           )}
         </div>
+
+
+        {/* Create Employee Button */}
+        <Link className="btn btn-lg btn-info m-2" to="/createEmployee">
+          Create Employee (+)
+        </Link>
+
+
       </div>
     </div>
 
