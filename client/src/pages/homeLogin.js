@@ -7,27 +7,31 @@ import Auth from '../utils/auth';
 
 import '../styles/app.css';
 
-const Home = () => {
 
+
+const Home = () => {
+  
   const [formState, setFormState] = useState({ name: '', password: '' });
   const [login, { error }] = useMutation(LOGIN_USER);
   const navigate = useNavigate();
 
+  
   const handleChange = (event) => {
     const { name, value } = event.target;
-
+    
     setFormState({
       ...formState,
       [name]: value,
     });
   };
+  
 
   // eslint-disable-next-line
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
     try {
-      const { data } = await login({
+      const { data } = await login ({
         variables: { ...formState },
       });
 
@@ -35,7 +39,7 @@ const Home = () => {
       navigate('/startShift');
     } catch (e) {
       console.error(e);
-    }  
+    }
 
     // clear form values
     setFormState({
@@ -56,39 +60,39 @@ const Home = () => {
           <div className="card-header bg-dark text-center">
             <h2>Welcome to Work!</h2>
           </div>
-            <form className='formText' onSubmit={handleFormSubmit}>
-              <input
-                className="form-input"
-                placeholder="Employee ID"
-                name="name"
-                type="name"
-                value={formState.name}
-                onChange={handleChange}
-              />
-              <input
-                className="form-input"
-                placeholder='Code'
-                name="password"
-                type="password"
-                value={formState.password}
-                onChange={handleChange}
-              />
-              <button
-                className="btn btn-primary btn-lg"
-                style={{ cursor: 'pointer' }}
-                type="submit"
-              >
-                Clock In
-              </button>
-              <br></br>
-              <button
-                className="btn btn-secondary btn-lg"
-                style={{ cursor: 'pointer' }}
-                type="submit"
-              >
-                Clock Out
-              </button>
-            </form>
+          <form className='formText' onSubmit={handleFormSubmit}>
+            <input
+              className="form-input"
+              placeholder="Employee ID"
+              name="name"
+              type="name"
+              value={formState.name}
+              onChange={handleChange}
+            />
+            <input
+              className="form-input"
+              placeholder='Code'
+              name="password"
+              type="password"
+              value={formState.password}
+              onChange={handleChange}
+            />
+            <button
+              className="btn btn-primary btn-lg"
+              style={{ cursor: 'pointer' }}
+              type="submit"
+            >
+              Clock In
+            </button>
+            <br></br>
+            <button
+              className="btn btn-secondary btn-lg"
+              style={{ cursor: 'pointer' }}
+              type="submit"
+            >
+              Clock Out
+            </button>
+          </form>
 
           {error && (
             <div className="my-3 p-3 bg-danger text-white">
@@ -104,15 +108,3 @@ const Home = () => {
 
 export default Home;
 
-/* <form>
-  <div className="form-group">
-    <label for="employeeId">Employee Id</label>
-    <input type="employeeId" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"></input>
-  </div>
-  <div className="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" className="form-control" id="exampleInputPassword1"></input>
-  </div>
-    <button type="button" className="btn btn-primary btn-lg">Clock In</button>
-    <button type="button" className="btn btn-secondary btn-lg">Clock Out</button>
-</form> */

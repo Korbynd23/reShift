@@ -12,6 +12,7 @@ import Startshift from './pages/startShift';
 import Endshift from './pages/endShift';
 import Admin from './pages/adminPage';
 import Home from './pages/homeLogin';
+import AdminLogin from './pages/adminLogin';
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header';
 import './styles/app.css';
@@ -53,6 +54,10 @@ function App() {
               <Route 
                 path="/adminPage" 
                 element={<Admin />} 
+              />
+              <Route 
+                path="/adminLogin" 
+                element={<AdminLogin />} 
               />
               <Route 
                 path="/startShift" 

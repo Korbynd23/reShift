@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 function Footer() {
 
   return (
-    <footer className="footer text-center">
+    <header className="header">
 
-      <Link to="/adminPage">
-        <button className="btn btn-warning">ADMIN</button>
+      <Link to="/adminLogin">
+        <h1 className='text-center'>Admin</h1>
       </Link>
-      
-    </footer>
+
+    </header>
   );
-  
+
 }
 
 export default Footer;
