@@ -50,19 +50,18 @@ const Home = () => {
 
     <div className="card text-white bg-dark text-light d-flex justify-content-center vh-100 align-items-center">
       <div className="card-body">
-        <h5 className="card-title">Welcome To Work!</h5>
-        <p className="card-text">Please Enter Employee Id and Password To Clock In!</p>
+        <p className="card-text text-center">Please Enter Your Employee Id and Password To Clock In</p>
         <div>
           <div className="card-header bg-dark text-center">
-            <h1>Welcome to Work!</h1>
+            <h2>Welcome to Work!</h2>
           </div>
           {data ? (
             <Navigate to="/startShift" />
           ) : (
-            <form onSubmit={handleFormSubmit}>
+            <form className='formText' onSubmit={handleFormSubmit}>
               <input
                 className="form-input"
-                placeholder="Employee Name"
+                placeholder="Employee ID"
                 name="name"
                 type="name"
                 value={formState.name}
@@ -70,6 +69,7 @@ const Home = () => {
               />
               <input
                 className="form-input"
+                placeholder='Code'
                 name="password"
                 type="password"
                 value={formState.password}
