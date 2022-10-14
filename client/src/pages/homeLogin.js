@@ -1,4 +1,4 @@
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
@@ -10,7 +10,8 @@ import '../styles/app.css';
 const Home = () => {
 
   const [formState, setFormState] = useState({ name: '', password: '' });
-  const [login, { error, data }] = useMutation(LOGIN_USER);
+  const [login, { error }] = useMutation(LOGIN_USER);
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -31,10 +32,10 @@ const Home = () => {
       });
 
       Auth.login(data.login.token);
+      navigate('/startShift');
     } catch (e) {
       console.error(e);
-    }
-
+    }  
 
     // clear form values
     setFormState({
@@ -55,9 +56,6 @@ const Home = () => {
           <div className="card-header bg-dark text-center">
             <h2>Welcome to Work!</h2>
           </div>
-          {data ? (
-            <Navigate to="/startShift" />
-          ) : (
             <form className='formText' onSubmit={handleFormSubmit}>
               <input
                 className="form-input"
@@ -91,7 +89,6 @@ const Home = () => {
                 Clock Out
               </button>
             </form>
-          )}
 
           {error && (
             <div className="my-3 p-3 bg-danger text-white">
