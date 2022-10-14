@@ -62,7 +62,7 @@ const CreateEmployee = () => {
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
-                  Add
+                  +
                 </button>
         </form>
       </div>
