@@ -6,17 +6,17 @@ function startShift() {
   return (
 
     <div className="startBody">
-      <div class="card w-50">
-        <div class="card-body text-center">
-            <h5 class="card-title">Hows your mood today?</h5>
+      <div className="card w-50">
+        <div className="card-body text-center">
+            <h5 className="card-title">Hows your mood today?</h5>
             <h1>
-                <button class="one">😫</button>
-                <button class="two">😔</button>
-                <button class="three">😐</button>
-                <button class="four">😊</button>
-                <button class="five">😁</button>
+                <button className="one">😫</button>
+                <button className="two">😔</button>
+                <button className="three">😐</button>
+                <button className="four">😊</button>
+                <button className="five">😁</button>
             </h1>
-            <button type="button" class="btn btn-primary btn-lg btn-block">Start Shift!</button>
+            <button type="button" className="btn btn-primary btn-lg btn-block">Start Shift!</button>
         </div>
     </div>
     </div>
