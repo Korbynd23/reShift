@@ -12,6 +12,7 @@ import Startshift from './pages/startShift';
 import Endshift from './pages/endShift';
 import Admin from './pages/adminPage';
 import Home from './pages/homeLogin';
+import CreateEmployee from './pages/createEmployee';
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header';
 import './styles/app.css';
@@ -55,6 +56,10 @@ function App() {
                 element={<Admin />} 
               />
               <Route 
+                path="/createEmployee" 
+                element={<CreateEmployee />} 
+              />
+              <Route 
                 path="/startShift" 
                 element={<Startshift />} 
               />
@@ -72,4 +77,3 @@ function App() {
 }
 
 export default App;
-
