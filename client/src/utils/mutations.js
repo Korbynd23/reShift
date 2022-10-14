@@ -7,13 +7,12 @@ export const ADD_EMPLOYEE = gql`
             name
             }
         }
-    }
-  
+    }  
 `;
 
 export const REMOVE_EMPLOYEE = gql`
-    mutation removeEmployee($employeeId: Int!) {
-        removeEmployee(Employee: $employeeId)
+    mutation removeEmployee($name: String!) {
+        removeEmployee(name: $name)
     }
 `;
 
