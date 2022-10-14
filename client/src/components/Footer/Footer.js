@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 function Footer() {
 
   return (
-    <header className="header">
+    <footer className="footer">
 
-      <Link to="/adminLogin">
-        <h1 className='text-center'>Admin</h1>
+      <Link className="btn btn-sm btn-warning m-2" to="/adminLogin">
+          Admin*
       </Link>
 
-    </header>
+    </footer>
   );
 
 }

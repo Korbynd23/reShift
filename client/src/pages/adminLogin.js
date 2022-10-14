@@ -8,40 +8,40 @@ import '../styles/app.css';
 const AdminLogin = () => {
 
     const navigate = useNavigate();
-    const adminPass = 123456
 
-    const [password, setPassword] = useState({password: ''});
+    const [formState, setPassword] = useState({ password: '' });
 
     const handleChange = (event) => {
         const { name, value } = event.target;
-        
-        setFormState({
-          ...formState,
-          [name]: value,
+
+        setPassword({
+            ...formState,
+            [name]: value,
         });
-      };
+    };
 
     const handleSubmit = (event) => {
+        const adminPass = "123456"
         event.preventDefault();
-        if (password === adminPass) {
+        console.log(formState.password)
+        if (formState.password === adminPass) {
             navigate('/adminPage')
+        } else {
+            alert("Invalid password")
         }
     }
-    alert(`The name you entered was wrong`);
 
 
     return (
         <div className="card text-white bg-dark text-light d-flex justify-content-center vh-100 align-items-center">
             <div className="card-body">
-                <p className="card-text text-center">Please Enter Your Employee Id and Password To Clock In</p>
-                <div>
                     <div className="card-header bg-dark text-center">
-                        <h2>Welcome to Work!</h2>
+                        <h2>Admin sign in!</h2>
                     </div>
                     <form className='formText' onSubmit={handleSubmit}>
                         <input
                             className="form-input"
-                            placeholder='Code'
+                            placeholder='PIN'
                             name="password"
                             type="password"
                             value={formState.password}
@@ -52,8 +52,6 @@ const AdminLogin = () => {
                     </form>
                 </div>
             </div>
-        </div>
-
     );
 };
 
