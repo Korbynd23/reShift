@@ -9,7 +9,7 @@ const resolvers = {
       },
   
       employee: async (parent, { name }) => {
-        return Employee.findOne({ name: name });
+        return Employee.find({ name: name });
       },
     },
   
@@ -36,10 +36,15 @@ const resolvers = {
         const token = signToken(employee);
         return { token, employee };
       },
+
+      // addReactionStart: async (parent, { name }) => {
+      //   const reaction = await Employee.create({name});
+      //   return {reaction}
+      // },
   
       removeEmployee: async (parent, { name }) => {
         return Employee.findOneAndDelete({ name: name });
-      },
+      }
     },
   };
   

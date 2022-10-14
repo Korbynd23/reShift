@@ -35,8 +35,8 @@ const typeDefs = gql`
     addEmployee(name: String!, password:String!): Employee
     login(name: String!, password: String!): Auth
     removeEmployee(name: String!): Employee
-    # addReactionsStart(startTimeValue: Int!)
-    # addReactionsEnd(endTimeValue: Int!)
+    # addReactionsStart(startTimeValue: Int!): Employee
+    # addReactionsEnd(endTimeValue: Int!): Employee
   }
 
 
