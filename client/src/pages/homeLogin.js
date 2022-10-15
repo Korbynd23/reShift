@@ -6,27 +6,31 @@ import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 import '../styles/app.css';
 
-const Home = () => {
 
+
+const Home = () => {
+  
   const [formState, setFormState] = useState({ name: '', password: '' });
   const [login, { error }] = useMutation(LOGIN_USER);
   const navigate = useNavigate();
 
+  
   const handleChange = (event) => {
     const { name, value } = event.target;
-
+    
     setFormState({
       ...formState,
       [name]: value,
     });
   };
+  
 
   // eslint-disable-next-line
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
     try {
-      const { data } = await login({
+      const { data } = await login ({
         variables: { ...formState },
       });
 

@@ -8,8 +8,7 @@ export const ADD_EMPLOYEE = gql`
               password
             }
         }
-    }
-  
+    }  
 `;
 
 export const REMOVE_EMPLOYEE = gql`
@@ -35,4 +34,5 @@ export const ADD_REACTIONSTART = gql`
       startTimeValue
     }
   }`
+
 
