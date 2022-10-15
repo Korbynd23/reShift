@@ -3,10 +3,8 @@ import { gql } from '@apollo/client';
 export const ADD_EMPLOYEE = gql`
     mutation addEmployee( $name: String!, $password:String!) {
         addEmployee(name: $name, password: $password) {
-            employee {
-              name
-              password
-            }
+          name
+          password
         }
     }  
 `;
