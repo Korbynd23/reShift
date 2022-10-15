@@ -1,10 +1,11 @@
 import { gql } from '@apollo/client';
 
 export const ADD_EMPLOYEE = gql`
-    mutation addEmployee( $name: String!, $password:Int!) {
+    mutation addEmployee( $name: String!, $password:String!) {
         addEmployee(name: $name, password: $password) {
             employee {
-            name
+              name
+              password
             }
         }
     }
@@ -29,11 +30,9 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_REACTIONSTART = gql`
-mutation addReactionStart($reaction: Int!) {
-  addReactionStart(reaction: $reaction) {
-    startValues {
+  mutation addReactionStart($reaction: Int!) {
+    addReactionStart(reaction: $reaction) {
       startTimeValue
     }
-  }
-}`
+  }`
 

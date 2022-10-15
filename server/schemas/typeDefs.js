@@ -4,20 +4,18 @@ const typeDefs = gql`
   type Employee {
     name: String
     password: String
-    startValues: [startValues]
-    endValues: [endValues]
+    # startValues: [startValues]
+    # endValues: [endValues]
   }
 
   type startValues {
     startTimeValue: Int
     createdAt: String
-    employee: Employee
   }
   
   type endValues {
     endTimeValue: Int
     createdAt: String
-    employee: Employee
   }
 
   type Auth {
@@ -29,17 +27,16 @@ const typeDefs = gql`
     employees: [Employee]!
     employee(name: String): Employee
     me: Employee
+    reactions: [startValues]
   }
 
   type Mutation {
-    addEmployee(name: String!, password:String!): Auth
+    addEmployee(name: String!, password:String!): Employee
     login(name: String!, password: String!): Auth
     removeEmployee(name: String!): Employee
-    addReactionStart(startTimeValue: Int!): Employee
-    addReactionEnd(endTimeValue: Int!): Employee
+    addReactionStart(startTimeValue: Int!): startValues
+    addReactionEnd(endTimeValue: Int!): endValues
   }
-
-
 `;
 
 module.exports = typeDefs;
