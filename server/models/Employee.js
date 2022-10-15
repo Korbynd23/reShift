@@ -41,10 +41,11 @@ const employeeSchema = new Schema({
     type: String,
     required: true,
     minlength: 4
-  },
-  
-  // startValues: [startTimeSchema],
-  // endValues: [endTimeSchema]
+  }
+//   reactions: [{
+//     addReactionStart: [startTimeSchema],
+//     endValues: [endTimeSchema]
+// }]
 });
 
 
