@@ -6,34 +6,57 @@ import '../styles/app.css';
 
 const CreateEmployee = () => {
 
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({
+    name: '',
+    password: ''
+  });
+
   const [addEmployee, { error }] = useMutation(ADD_EMPLOYEE);
 
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+    console.log(addEmployee);
+
+
+    // // Missing something here that takes our employee and adds them to the database.
+    try {
+      const { data } = addEmployee({ variables: { ...formState },});
+
+
+      // I dont think this is supposed to be window.location.reload but idk what else to try 
+      console.log(data);
+      // says data is undefined 
+    } catch (err) {
+      console.error(err);
+    }
+
+    // const mutationResponse = await addEmployee({
+    //   variables: {
+    //     name: formState.name,
+    //     password: formState.password,
+    //   },
+    // });
+
+    // const wtf = mutationResponse.data.addEmployee;
+    // db.addEmployee(wtf)
+
+
+    // clear form values
+    setFormState({
+      name: '',
+      password: '',
+    });
+  };
+
   const handleChange = (event) => {
+
     const { name, value } = event.target;
 
     setFormState({
       ...formState,
       [name]: value,
-    });
-  };
-
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    console.log(formState);
-    try {
-      const { data } = await addEmployee ({
-        variables: { ...formState },
-      });
-
-    } catch (e) {
-      console.error(e);
-    }
-
-    // clear form values
-    setFormState({
-      email: '',
-      password: '',
     });
   };
 
@@ -58,13 +81,18 @@ const CreateEmployee = () => {
             onChange={handleChange}
           />
           <button
-                  className="btn btn-block btn-primary"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                >
-                  +
-                </button>
+            className="btn btn-block btn-primary"
+            style={{ cursor: 'pointer' }}
+            type="submit"
+          >
+            +
+          </button>
         </form>
+        {error && (
+          <div className="my-3 p-3 bg-danger text-white">
+            {error.message}
+          </div>
+        )}
       </div>
     </div>
   )

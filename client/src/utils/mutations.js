@@ -5,15 +5,15 @@ export const ADD_EMPLOYEE = gql`
         addEmployee(name: $name, password: $password) {
             employee {
             name
+            password
             }
         }
-    }
-  
+    }  
 `;
 
 export const REMOVE_EMPLOYEE = gql`
-    mutation removeEmployee($employeeId: Int!) {
-        removeEmployee(Employee: $employeeId)
+    mutation removeEmployee($name: String!) {
+        removeEmployee(name: $name)
     }
 `;
 
@@ -27,4 +27,3 @@ export const LOGIN_USER = gql`
     }
   }
 `;
-
