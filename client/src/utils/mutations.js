@@ -5,6 +5,7 @@ export const ADD_EMPLOYEE = gql`
         addEmployee(name: $name, password: $password) {
             employee {
             name
+            password
             }
         }
     }  
@@ -26,4 +27,3 @@ export const LOGIN_USER = gql`
     }
   }
 `;
-
