@@ -77,7 +77,7 @@ const Home = () => {
               onChange={handleChange}
             />
             <button
-              className="btn btn-primary btn-lg"
+              className="btn btn-primary btn-md"
               style={{ cursor: 'pointer' }}
               type="submit"
             >
@@ -85,7 +85,7 @@ const Home = () => {
             </button>
             <br></br>
             <button
-              className="btn btn-secondary btn-lg"
+              className="btn btn-secondary btn-md"
               style={{ cursor: 'pointer' }}
               type="submit"
             >
@@ -102,8 +102,13 @@ const Home = () => {
 
 
         {/* Create Employee Button */}
-        <Link className="btn btn-lg btn-info m-2" to="/createEmployee">
+        <Link className="btn btn-lg bg-success btn-info m-2" to="/createEmployee">
           Create Employee (+)
+        </Link>
+        
+        {/* Delete Employee Button */}
+        <Link className="btn btn-lg bg-danger btn-info m-2" to="/deleteEmployee">
+          Delete Employee (-)
         </Link>
 
 
