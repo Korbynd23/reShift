@@ -1,5 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { Employee } = require('../models');
+const { Reaction } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -9,8 +10,12 @@ const resolvers = {
       },
   
       employee: async (parent, { name }) => {
-        return Employee.findOne({ name: name });
+        return Employee.find({ name: name });
       },
+
+      reactions: async (parent, {addReactionStart, addReactionEnd}) => {
+        return Reaction.find()
+      }
     },
   
     Mutation: {
@@ -36,10 +41,21 @@ const resolvers = {
         const token = signToken(employee);
         return { token, employee };
       },
+
+      addReactionStart: async (parent, { startTimeValue }) => {
+        const reaction = await Reaction.create({startTimeValue});
+        return {reaction}
+      },
+
+      // addReactionEnd: async (parent, { reaction, addReactionStart }) => {
+      //   const reaction = await Reaction.create({reaction, addReactionEnd});
+      //   return {reaction}
+      // },
+      
   
       removeEmployee: async (parent, { name }) => {
         return Employee.findOneAndDelete({ name: name });
-      },
+      }
     },
   };
   
