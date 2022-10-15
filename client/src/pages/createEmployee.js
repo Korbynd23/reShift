@@ -1,57 +1,23 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
+// import { useNavigate } from 'react-router-dom';
+
 import { ADD_EMPLOYEE } from '../utils/mutations';
 import '../styles/app.css';
 
 
 const CreateEmployee = () => {
 
+  // const navigate = useNavigate();
+
   const [formState, setFormState] = useState({
     name: '',
     password: ''
   });
-
+  
   const [addEmployee, { error }] = useMutation(ADD_EMPLOYEE);
-
-
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    console.log(formState);
-    console.log(addEmployee);
-
-
-    // // Missing something here that takes our employee and adds them to the database.
-    try {
-      const { data } = addEmployee({ variables: { ...formState },});
-
-
-      // I dont think this is supposed to be window.location.reload but idk what else to try 
-      console.log(data);
-      // says data is undefined 
-    } catch (err) {
-      console.error(err);
-    }
-
-    // const mutationResponse = await addEmployee({
-    //   variables: {
-    //     name: formState.name,
-    //     password: formState.password,
-    //   },
-    // });
-
-    // const wtf = mutationResponse.data.addEmployee;
-    // db.addEmployee(wtf)
-
-
-    // clear form values
-    setFormState({
-      name: '',
-      password: '',
-    });
-  };
-
+  
   const handleChange = (event) => {
-
     const { name, value } = event.target;
 
     setFormState({
@@ -59,6 +25,26 @@ const CreateEmployee = () => {
       [name]: value,
     });
   };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+    try {
+      const { data } = addEmployee({ variables: { ...formState }, });
+
+    } catch (err) {
+      console.error(err);
+    }
+
+    setFormState({
+      name: '',
+      password: '',
+    });
+  };
+
+  // clear form values
+
+
 
   return (
     <div className="card text-white bg-dark text-light d-flex justify-content-center vh-100 align-items-center">
@@ -74,7 +60,7 @@ const CreateEmployee = () => {
           />
           <input
             className="form-input"
-            placeholder='Code'
+            placeholder='Password'
             name="password"
             type="password"
             value={formState.password}
