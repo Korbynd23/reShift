@@ -14,6 +14,7 @@ import Admin from './pages/adminPage';
 import Home from './pages/homeLogin';
 import AdminLogin from './pages/adminLogin';
 import CreateEmployee from './pages/createEmployee';
+import DeleteEmployee from './pages/deleteEmployee';
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header';
 import './styles/app.css';
@@ -63,6 +64,10 @@ function App() {
               <Route
                 path="/createEmployee" 
                 element={<CreateEmployee />} 
+              />
+              <Route
+                path="/deleteEmployee" 
+                element={<DeleteEmployee />} 
               />
               <Route 
                 path="/startShift" 

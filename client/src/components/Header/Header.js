@@ -7,7 +7,7 @@ function Header() {
     <header className="header">
 
       <Link to="/">
-        <h1 className='text-center'>-Logo-</h1>
+        <h2 className='text-center logo'>-Logo-</h2>
       </Link>
 
     </header>
