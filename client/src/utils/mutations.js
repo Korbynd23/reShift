@@ -25,3 +25,12 @@ export const LOGIN_USER = gql`
     }
   }
 `;
+
+export const ADD_REACTIONSTART = gql`
+  mutation addReactionStart($reaction: Int!) {
+    addReactionStart(reaction: $reaction) {
+      startTimeValue
+    }
+  }`
+
+
