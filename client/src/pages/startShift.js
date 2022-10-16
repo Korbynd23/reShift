@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import {ADD_REACTION_START} from '../utils/mutations';
+import { Link } from 'react-router-dom';
 
 
 
@@ -68,8 +69,8 @@ function StartShift() {
 
 
     <div className="startBody">
-      <div className="card w-50">
-        <div className="card-body text-center">
+      <div className="card">
+        <div className="card-body bg-dark text-center">
             <h5 className="card-title">Hows your mood today?</h5>
             <div className="btn-group" role="group">
                 <button type="button" className={`btn btn-lg btn-outline-primary ${reaction === "1" && "active"}`} value="1" onClick={(e) => handleReaction(e.target.value)}>😫</button>
@@ -78,9 +79,11 @@ function StartShift() {
                 <button type="button" className={`btn btn-lg btn-outline-primary ${reaction === "4" && "active"}`} value="4" onClick={(e) => handleReaction(e.target.value)}>😊</button>
                 <button type="button" className={`btn btn-lg btn-outline-primary ${reaction === "5" && "active"}`} value="5" onClick={(e) => handleReaction(e.target.value)}>😁</button>
             </div>
-            <div>
-              <button type="button" className="btn btn-primary btn-lg btn-block" onClick={handleSubmit}>Start Shift!</button>
-            </div>
+            <Link to='/'>
+              <div>
+                <button type="button" className="btn btn-primary btn-lg btn-block" onClick={handleSubmit}>Start Shift!</button>
+              </div>
+            </Link>
         </div>
     </div>
     </div>

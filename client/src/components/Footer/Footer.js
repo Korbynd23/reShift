@@ -6,8 +6,8 @@ function Footer() {
   return (
     <footer className="footer">
 
-      <Link className="btn btn-sm btn-warning m-2" to="/adminLogin">
-          Admin*
+      <Link className="btn btn-md btn-warning m-2" to="/adminLogin">
+          Admin
       </Link>
 
     </footer>
