@@ -45,10 +45,10 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="">
+        <div className="mainSet">
           <Header />
           <div className="container">
-            <Routes>
+            <Routes className="routePages">
               <Route 
                 path="/" 
                 element={<Home />} 
