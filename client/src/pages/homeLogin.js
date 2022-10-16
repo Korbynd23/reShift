@@ -77,7 +77,7 @@ const Home = () => {
               onChange={handleChange}
             />
             <button
-              className="btn btn-primary btn-md"
+              className="btn clockBtn btn-primary btn-md"
               style={{ cursor: 'pointer' }}
               type="submit"
             >
@@ -85,7 +85,7 @@ const Home = () => {
             </button>
             <br></br>
             <button
-              className="btn btn-secondary btn-md"
+              className="btn clockBtn btn-secondary btn-md"
               style={{ cursor: 'pointer' }}
               type="submit"
             >
@@ -100,17 +100,17 @@ const Home = () => {
           )}
         </div>
 
-
-        {/* Create Employee Button */}
-        <Link className="btn btn-lg bg-success btn-info m-2" to="/createEmployee">
+        <div className='cdBtn'>
+          {/* Create Employee Button */}
+          <Link className="btn btn-md bg-success btn-info m-2" to="/createEmployee">
           Create Employee (+)
-        </Link>
+         </Link>
         
-        {/* Delete Employee Button */}
-        <Link className="btn btn-lg bg-danger btn-info m-2" to="/deleteEmployee">
+          {/* Delete Employee Button */}
+          <Link className="btn btn-md bg-danger btn-info m-2" to="/deleteEmployee">
           Delete Employee (-)
-        </Link>
-
+          </Link>
+        </div>
 
       </div>
     </div>

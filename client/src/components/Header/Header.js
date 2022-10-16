@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Logo from '../images2/reShift.jpeg'
 
 function Header() {
 
@@ -7,8 +8,9 @@ function Header() {
     <header className="header">
 
       <Link to="/">
-        <h2 className='text-center logo'>-Logo-</h2>
+        <img className='logo' src={Logo}></img>
       </Link>
+     
 
     </header>
   );

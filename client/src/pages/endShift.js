@@ -6,7 +6,7 @@ function endShift() {
   return (
     
     <div className="endBody">
-      <div class="card w-50">
+      <div class="card">
         <div class="card-body text-center">
           <h5 class="card-title">Hows your mood today?</h5>
           <h1>

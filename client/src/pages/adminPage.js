@@ -12,7 +12,7 @@ function adminPage() {
 
   return (
     <div>
-      <p className="adminTop"> .
+      <p className="adminTop"> 
       </p>
 
       <div className='adminBody'>
@@ -54,11 +54,12 @@ function adminPage() {
         </table>
       </div>
 
-
-      {/* Exit button to go back to Home Login */}
-      <Link to="/">
-        <button type="button" className="btn btn-danger">Exit</button>
-      </Link>
+      <div className='eBtn'>
+        {/* Exit button to go back to Home Login */}
+        <Link to="/">
+          <button type="button" className="btn btn-danger">Exit</button>
+        </Link>
+      </div>
     </div>
   );
 }
