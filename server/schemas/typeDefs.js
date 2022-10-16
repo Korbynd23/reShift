@@ -4,8 +4,6 @@ const typeDefs = gql`
   type Employee {
     name: String
     password: String
-    # startValues: [startValues]
-    # endValues: [endValues]
   }
 
   type startValues {
@@ -29,6 +27,11 @@ const typeDefs = gql`
     me: Employee
     reactions: [startValues]
   }
+
+  # type ReactionValues {
+  #   startReaction: [startValues]
+  #   endReaction: [endValues]
+  # }
 
   type Mutation {
     addEmployee(name: String!, password: String!): Employee
