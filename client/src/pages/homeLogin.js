@@ -70,7 +70,7 @@ const Home = () => {
             />
             <input
               className="form-input"
-              placeholder='Code'
+              placeholder='Password'
               name="password"
               type="password"
               value={formState.password}

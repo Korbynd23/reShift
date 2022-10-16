@@ -65,9 +65,3 @@ function adminPage() {
 }
 
 export default adminPage;
-
-    // Needs to be used on adminPage to retrieve all employees (8-11)
-    // const { loading, data } = useQuery(QUERY_EMPLOYEE, {
-    //   fetchPolicy: "no-cache"
-    // });
-    // const employeeList = data?.matchups || [];

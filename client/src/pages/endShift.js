@@ -5,7 +5,7 @@ function endShift() {
   // upon clicking "end shift" will need to return to homelogin page and make sure values are cleared in forms
   return (
     
-    <div className="endBody">
+    <div className="endBody adminLogin">
       <div class="card">
         <div class="card-body text-center">
           <h5 class="card-title">Hows your mood today?</h5>
