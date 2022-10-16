@@ -10,26 +10,30 @@
     background-position: center;
 }
 
-#gator {
-  
+.adminLogin {
+  width: 100vh;
+  max-height: 30vh;
+  border: yellowgreen 5px outset;
+  border-radius: 10%;
 }
 
 
 .cdBtn  {
   display: flex;
-  justify-content: center;
-  gap: 15px;
-  position: absolute;
-  bottom: 15px;
-  left: 0px;
-  width: 100%;
+    /* grid-gap: 15px; */
+    /* gap: 15px; */
+    /* bottom: 15px; */
+    /* left: 0px; */
+    margin-top: 75px;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .eBtn {
   display: flex;
   justify-content: center;
 }
-
 
 
 .logo {
@@ -44,8 +48,8 @@
 }
 
 .homeLogin {
-  width: 100vh;
-  height: 50vw;
+  width: 55vw;
+  height: 55vh;
   border: yellowgreen 5px outset;
   border-radius: 10%;
 }
@@ -76,6 +80,7 @@
 
 
 .header {
+  margin: 10px;
   /* background-image: url(../images/modern-bright-red-vector-header-260nw-1847556298.webp);
   background-image:
   linear-gradient(to bottom, rgba(0, 0, 0, 0.446), rgba(14, 14, 14, 0.461)),
@@ -109,6 +114,10 @@
   }
   .homeLogin {
     height: 100%;
+    width: fit-content;
+  }
+  .adminLogin {
+    height: 50vh;
   }
   .mainSet {
     display: flex;

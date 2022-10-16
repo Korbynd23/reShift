@@ -33,7 +33,7 @@ const AdminLogin = () => {
 
 
     return (
-        <div className="card text-white bg-dark text-light d-flex justify-content-center vh-100 align-items-center">
+        <div className="card text-white bg-dark text-light d-flex justify-content-center vh-100 align-items-center adminLogin">
             <div className="card-body">
                     <div className="card-header bg-dark text-center">
                         <h2>Admin sign in!</h2>

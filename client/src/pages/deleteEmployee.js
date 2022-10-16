@@ -30,18 +30,6 @@ const DeleteEmployee = () => {
       console.error(err);
     }
 
-    // const mutationResponse = await addEmployee({
-    //   variables: {
-    //     name: formState.name,
-    //     password: formState.password,
-    //   },
-    // });
-
-    // const wtf = mutationResponse.data.addEmployee;
-    // db.addEmployee(wtf)
-
-
-    // clear form values
     setFormState({
       name: '',
     });
@@ -58,12 +46,12 @@ const DeleteEmployee = () => {
   };
 
   return (
-    <div className="card text-white bg-dark text-light d-flex justify-content-center vh-100 align-items-center">
+    <div className="card text-white bg-dark text-light d-flex justify-content-center vh-100 align-items-center adminLogin">
       <div className="card-body">
         <form className='formText' onSubmit={handleFormSubmit}>
           <input
             className="form-input"
-            placeholder="Employee ID"
+            placeholder="Employee Name"
             name="name"
             type="name"
             value={formState.name}
@@ -75,7 +63,7 @@ const DeleteEmployee = () => {
             style={{ cursor: 'pointer' }}
             type="submit"
           >
-            Cut
+            Delete Employee
           </button>
         </form>
         
