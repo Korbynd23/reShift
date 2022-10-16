@@ -1,37 +1,42 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import {ADD_REACTIONSTART} from '../utils/mutations';
+import {ADD_REACTION_START} from '../utils/mutations';
 
 
 
 function StartShift() {
 
-  const [formState, setFormState] = useState({ email: '', password: '' });
-  const [addReactionStart, {error}] = useMutation(ADD_REACTIONSTART);
+  // const [formState, setFormState] = useState({ email: '', password: '' });
+  const [reaction, setReaction] = useState(null)
+  const [addReactionStart] = useMutation(ADD_REACTION_START);
 
-  const submitReaction = (e) => {
-    const {startTimeValue, value} = e.target;
-    prompt("Deez")
+  // const submitReaction = (e) => {
+  //   const {startTimeValue, value} = e.target;
+  //   prompt("Deez")
 
-    setFormState({
-      ...formState,
-      [startTimeValue]: value
-    })
+  //   setFormState({
+  //     ...formState,
+  //     [startTimeValue]: value
+  //   })
 
-  };
+  // };
 
-  const handleClick = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
     try {
       const {data} = await addReactionStart({
         variables: {
-          ...formState
+          reaction: parseInt(reaction)
         }
       })
+      console.log(data)
     }catch (e) {
         console.error(e)
       }
     }
+  
+  const handleReaction = (value) => {
+    setReaction(value)
+  }
 
 
 
@@ -66,14 +71,16 @@ function StartShift() {
       <div className="card w-50">
         <div className="card-body text-center">
             <h5 className="card-title">Hows your mood today?</h5>
-            <h1>
-                <button value="1" onClick={alert(this.value)}>😫</button>
-                <button value="2">😔</button>
-                <button value="3">😐</button>
-                <button value="4">😊</button>
-                <button value="5">😁</button>
-            </h1>
-            <button type="button" className="btn btn-primary btn-lg btn-block">Start Shift!</button>
+            <div className="btn-group" role="group">
+                <button type="button" className={`btn btn-lg btn-outline-primary ${reaction === "1" && "active"}`} value="1" onClick={(e) => handleReaction(e.target.value)}>😫</button>
+                <button type="button" className={`btn btn-lg btn-outline-primary ${reaction === "2" && "active"}`} value="2" onClick={(e) => handleReaction(e.target.value)}>😔</button>
+                <button type="button" className={`btn btn-lg btn-outline-primary ${reaction === "3" && "active"}`} value="3" onClick={(e) => handleReaction(e.target.value)}>😐</button>
+                <button type="button" className={`btn btn-lg btn-outline-primary ${reaction === "4" && "active"}`} value="4" onClick={(e) => handleReaction(e.target.value)}>😊</button>
+                <button type="button" className={`btn btn-lg btn-outline-primary ${reaction === "5" && "active"}`} value="5" onClick={(e) => handleReaction(e.target.value)}>😁</button>
+            </div>
+            <div>
+              <button type="button" className="btn btn-primary btn-lg btn-block" onClick={handleSubmit}>Start Shift!</button>
+            </div>
         </div>
     </div>
     </div>

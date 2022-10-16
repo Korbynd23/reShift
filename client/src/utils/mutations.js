@@ -11,7 +11,9 @@ export const ADD_EMPLOYEE = gql`
 
 export const REMOVE_EMPLOYEE = gql`
     mutation removeEmployee($name: String!) {
-        removeEmployee(name: $name)
+        removeEmployee(name: $name) {
+          name
+        }
     }
 `;
 
@@ -26,9 +28,9 @@ export const LOGIN_USER = gql`
   }
 `;
 
-export const ADD_REACTIONSTART = gql`
+export const ADD_REACTION_START = gql`
   mutation addReactionStart($reaction: Int!) {
-    addReactionStart(reaction: $reaction) {
+    addReactionStart(startTimeValue: $reaction) {
       startTimeValue
     }
   }`
