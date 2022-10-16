@@ -10,23 +10,22 @@ const DeleteEmployee = () => {
     name: '',
   });
 
+  const [success, setSuccess] = useState(false)
+
   const [cutEmployee, { error }] = useMutation(REMOVE_EMPLOYEE);
 
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
-    console.log(cutEmployee);
-
 
     // // Missing something here that takes our employee and adds them to the database.
     try {
-      const { data } = cutEmployee({ variables: { ...formState },});
-
-
-      // I dont think this is supposed to be window.location.reload but idk what else to try 
-      console.log(data);
-      // says data is undefined 
+      cutEmployee({ variables: { ...formState },});
+      setSuccess(true);
+      setTimeout(() => {
+        setSuccess(false);
+      }, 4000);
     } catch (err) {
       console.error(err);
     }
@@ -80,6 +79,11 @@ const DeleteEmployee = () => {
           </button>
         </form>
         
+        {success && (
+          <div className="my-3 p-3 bg-success text-white">
+            Employee has successfully been deleted!
+          </div>
+        )}
         {error && (
           <div className="my-3 p-3 bg-danger text-white">
             {error.message}

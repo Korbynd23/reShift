@@ -14,6 +14,8 @@ const CreateEmployee = () => {
     name: '',
     password: ''
   });
+
+  const [success, setSuccess] = useState(false)
   
   const [addEmployee, { error }] = useMutation(ADD_EMPLOYEE);
   
@@ -30,8 +32,11 @@ const CreateEmployee = () => {
     event.preventDefault();
     console.log(formState);
     try {
-      const { data } = addEmployee({ variables: { ...formState }, });
-
+      addEmployee({ variables: { ...formState }, });
+      setSuccess(true);
+      setTimeout(() => {
+        setSuccess(false);
+      }, 4000);
     } catch (err) {
       console.error(err);
     }
@@ -74,6 +79,11 @@ const CreateEmployee = () => {
             +
           </button>
         </form>
+        {success && (
+          <div className="my-3 p-3 bg-success text-white">
+            Employee has successfully been created!
+          </div>
+        )}
         {error && (
           <div className="my-3 p-3 bg-danger text-white">
             {error.message}
