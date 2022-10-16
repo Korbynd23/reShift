@@ -25,13 +25,13 @@ const typeDefs = gql`
     employees: [Employee]!
     employee(name: String): Employee
     me: Employee
-    reactions: [startValues]
+    reactions: [ReactionValues]
   }
 
-  # type ReactionValues {
-  #   startReaction: [startValues]
-  #   endReaction: [endValues]
-  # }
+  type ReactionValues {
+    startReaction: [startValues]
+    endReaction: [endValues]
+  }
 
   type Mutation {
     addEmployee(name: String!, password: String!): Employee
