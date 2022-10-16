@@ -52,8 +52,9 @@ const CreateEmployee = () => {
 
 
   return (
-    <div className="card text-white bg-dark text-light d-flex justify-content-center vh-100 align-items-center">
-      <div className="card-body">
+    <div className="card text-white bg-dark text-light d-flex justify-content-center align-items-center">
+      <br></br>
+      <div className="card-body" id='gator'>
         <form className='formText' onSubmit={handleFormSubmit}>
           <input
             className="form-input"

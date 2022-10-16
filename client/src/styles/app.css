@@ -3,9 +3,39 @@
     background-image: url('../images/background.jpeg');
     background-size: cover;
     width: 100%;
+    height: 100vh;
     flex-wrap: nowrap;
     flex-direction: column;
     align-items: center;
+    background-position: center;
+}
+
+#gator {
+  
+}
+
+
+.cdBtn  {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  position: absolute;
+  bottom: 15px;
+  left: 0px;
+  width: 100%;
+}
+
+.eBtn {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.logo {
+  height: 70px;
+  padding: 5px;
+  background-color: rgb(109, 109, 109);
 }
 
 .container {
@@ -23,28 +53,27 @@
 .form-input {
   display: inline-block;
   justify-content: center;
-  margin: 5px;
 }
 
 .formText {
-  display: inline-block;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 15px;
   margin: 4px;
   padding: 5px;
   width: 500px;
 }
 
 .formText button {
-  width: 100px;
-  height: 50px;
+  width: 150px;
+  height: 60px;
 }
 
 .formText input {
   width: 230px;
 }
 
-.adminTop {
-  background-color: aqua;
-}
 
 .header {
   /* background-image: url(../images/modern-bright-red-vector-header-260nw-1847556298.webp);
@@ -99,6 +128,6 @@
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
-    height: 65vh;
+    height: 65%;
   }
 }
