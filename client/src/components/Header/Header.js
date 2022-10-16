@@ -8,7 +8,7 @@ function Header() {
     <header className="header">
 
       <Link to="/">
-        <img className='logo' src={Logo}></img>
+        <img className='logo' src={Logo} alt=''></img>
       </Link>
      
 
