@@ -52,11 +52,11 @@ const Home = () => {
   // Bottom with have an admin button that will prompt sign in and will redirect to admin page with employee queries that will display all employees and an "addEmployee" and "removeEmployee" functions
   return (
 
-    <div className="card text-white bg-dark text-light d-flex justify-content-center vh-100 align-items-center">
-      <div className="card-body">
+    <div className="card text-white bg-dark text-light d-flex justify-content-center align-items-center homeLogin">
+      <div className="card-body cardBody">
         <p className="card-text text-center">Please Enter Your Employee Id and Password To Clock In</p>
         <div>
-          <div className="card-header bg-dark text-center">
+          <div className="card-header bg-dark text-center h2head">
             <h2>Welcome to Work!</h2>
           </div>
           <form className='formText' onSubmit={handleFormSubmit}>
