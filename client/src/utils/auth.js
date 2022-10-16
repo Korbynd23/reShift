@@ -5,6 +5,10 @@ class AuthService {
     return decode(this.getToken());
   }
 
+  getEmployees() {
+    return decode(this.getToken())
+  }
+
   loggedIn() {
     const token = this.getToken();
     return token && !this.isTokenExpired(token) ? true : false;

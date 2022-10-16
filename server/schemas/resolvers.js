@@ -43,14 +43,14 @@ const resolvers = {
       },
 
       addReactionStart: async (parent, { startTimeValue }) => {
-        const reaction = await Reaction.create({startTimeValue});
-        return {reaction}
+        const startReaction = await Reaction.create({startTimeValue});
+        return {startReaction}
       },
 
-      // addReactionEnd: async (parent, { reaction, addReactionStart }) => {
-      //   const reaction = await Reaction.create({reaction, addReactionEnd});
-      //   return {reaction}
-      // },
+      addReactionEnd: async (parent, { endTimeValue }) => {
+        const endReaction = await Reaction.create({endTimeValue});
+        return {endReaction}
+      },
       
   
       removeEmployee: async (parent, { name }) => {
