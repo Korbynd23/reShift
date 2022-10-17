@@ -13,7 +13,7 @@ const AdminPage = () => {
   return (
     <main>
     <div className="flex-row justify-center bg-dark homeLogin">
-      <div className="col-12 col-md-8 mb-3">
+      <div className="col-12 col-md-8 sm-8">
         {loading ? (
           <div>Loading...</div>
         ) : (

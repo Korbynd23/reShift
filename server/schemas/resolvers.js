@@ -7,13 +7,15 @@ const resolvers = {
       employees: async () => {
         return Employee.find();
       },
-  
       employee: async (parent, { name }) => {
         return Employee.find({ name: name });
       },
 
-      reactions: async (parent, {addReactionStart, addReactionEnd}) => {
-        return Reaction.find()
+      startReactions: async () => {
+        return StartReaction.find()
+      },
+      endReactions: async () => {
+        return EndReaction.find()
       }
     },
   
