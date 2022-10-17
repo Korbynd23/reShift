@@ -9,8 +9,11 @@ export const QUERY_EMPLOYEE = gql`
 `;
 
 export const QUERY_EMPLOYEES = gql`
-    query employees{
+    query employees {
+        employees {
             name
-    }`
+        }
+    }
+`;
 
 
