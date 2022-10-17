@@ -23,7 +23,7 @@ const AdminLogin = () => {
     const handleSubmit = (event) => {
         const adminPass = "123456"
         event.preventDefault();
-        console.log(formState.password)
+
         if (formState.password === adminPass) {
             navigate('/adminPage')
         } else {
