@@ -28,7 +28,10 @@ const endTimeSchema = new Schema({
   // }
 })
 
-const Start = mongoose.model('StartReaction', startTimeSchema);
-const End = mongoose.model('EndReaction', endTimeSchema)
+const StartReaction = mongoose.model('StartReaction', startTimeSchema);
+const EndReaction = mongoose.model('EndReaction', endTimeSchema);
 
-module.exports = Start, End;
+module.exports = {
+  StartReaction,
+  EndReaction
+}
