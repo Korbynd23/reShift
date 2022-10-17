@@ -48,10 +48,14 @@
 }
 
 .homeLogin {
+  display: flex;
   width: 55vw;
   height: 55vh;
   border: yellowgreen 5px outset;
   border-radius: 10%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .form-input {
@@ -117,7 +121,10 @@
     width: fit-content;
   }
   .adminLogin {
-    height: 50vh;
+    max-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
   .mainSet {
     display: flex;
