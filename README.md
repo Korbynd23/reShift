@@ -3,10 +3,10 @@
 ## Table of Contents 
 
 - [Description](#description)
+- [Application-Photo](#application-photo)
 - [Installation](#installation)
 - [Usage](#usage)
 - [User-Story](#user-story)
-- [Acceptance-Criteria](#acceptance-criteria)
 - [Change-Log](#change-log)
 - [technologies](#technologies)
 - [License](#license)
@@ -19,10 +19,15 @@ For this project we are creating an application to be used by companies for thei
 
 ---
 
+### Application Photo
+![app screenshot](./client/src/images/appShot.png)
+
+---
+
 ## Installation
 
 To view the project, clone the git repository using VS Code. 
-Link to deployed website: https://github.com/meyerbw10/Social-Network-API
+<!-- Link to deployed website: need deployed url -->
 
 ---
 
@@ -41,52 +46,6 @@ SO THAT my Company can be inclusive and successful, as well as a great place to 
 ```
 ---
 
-## Acceptance Criteria
-```
-Satisfies the following code requirements:
-
-Application uses React for the front end.
-
-Application has a GraphQL API with a Node.js and Express.js server, and uses queries and mutations for retrieving, adding, updating, and deleting data.
-
-Application uses MongoDB and the Mongoose ODM for the database and protects sensitive API key information on the server.
-
-Application includes user authentication using JWT.
-
-Application should be a unique and novel idea.
-
-Your group should clearly and concisely articulate your project idea.
-
-Application deployed at live URL on Heroku and loads with no errors.
-
-Application GitHub URL submitted.
-
-Repository has a unique name.
-
-Repository follows best practices for file structure and naming conventions.
-
-Repository follows best practices for class and id naming conventions, indentation, quality comments, etc.
-
-Repository contains multiple descriptive commit messages.
-
-Repository contains a high-quality README file with description, screenshot, and link to deployed application.
-
-Application user experience is intuitive and easy to navigate.
-
-Application user interface style is clean and polished.
-
-Application is responsive.
-
-Your group should present using Google Slides, Powerpoint, or a similar presentation software.
-
-Every group member should speak during the presentation.
-
-Your presentation should follow the Project Presentation TemplateLinks to an external site..
-
-There are no major disparities in the number of GitHub contributions between group members.
-```
-
----
 
 
 ## Change Log
@@ -108,6 +67,8 @@ There are no major disparities in the number of GitHub contributions between gro
 ---
 
 ## License
+
+[github link: korbynd23](https://github.com/korbynd23)
 
 Copyright (c) 2022 Korbyn Dicari, Tyler Neal, Nicholas Bales, Lawrence Carr & Bradley Meyer
 

@@ -48,7 +48,7 @@ function App() {
       <Router>
         <div className="mainSet">
           <Header />
-          <div className="container">
+          <div className="container col-12 md-8 sm-8">
             <Routes className="routePages">
               <Route 
                 path="/" 

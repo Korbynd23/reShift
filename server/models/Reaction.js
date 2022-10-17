@@ -9,10 +9,7 @@ const startTimeSchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now()
-  },
-  // employee: {
-  //   type: Schema.Types.ObjectId,
-  // }
+  }
 })
 
 const endTimeSchema = new Schema({
@@ -22,10 +19,7 @@ const endTimeSchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now()
-  },
-  // employee: {
-  //   type: Schema.Types.ObjectId,
-  // }
+  }
 })
 
 const StartReaction = mongoose.model('StartReaction', startTimeSchema);
@@ -33,5 +27,5 @@ const EndReaction = mongoose.model('EndReaction', endTimeSchema);
 
 module.exports = {
   StartReaction,
-  EndReaction
+  EndReaction,
 }

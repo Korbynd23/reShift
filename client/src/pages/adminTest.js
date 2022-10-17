@@ -65,3 +65,5 @@
 // }
 
 // export default adminPage;
+
+//mongodb+srv://servermonks:servermonks@cluster0.3ba6iig.mongodb.net/reShift?retryWrites=true&w=majority
