@@ -55,9 +55,6 @@ const Home = () => {
     });
   };
 
-
-  // Will need login box(entail: employeeId and PIN) and 2 buttons: clock in and clock out. Clock out will only work if user is clocked in - if not clock out will display prompt.
-  // Bottom with have an admin button that will prompt sign in and will redirect to admin page with employee queries that will display all employees and an "addEmployee" and "removeEmployee" functions
   return (
 
     <div className="card text-white bg-dark text-light d-flex justify-content-center align-items-center homeLogin">
