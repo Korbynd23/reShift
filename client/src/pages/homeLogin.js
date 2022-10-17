@@ -9,8 +9,7 @@ import '../styles/app.css';
 
 
 const Home = () => {
-  
-  const [formState, setFormState] = useState({ name: '', password: '' });
+  const [formState, setFormState] = useState({ name: '', password: '', action: '' });
   const [login, { error }] = useMutation(LOGIN_USER);
   const navigate = useNavigate();
 
@@ -29,13 +28,21 @@ const Home = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
+    console.log(`The Event Target Value: ${event.target.value}`)
     try {
       const { data } = await login ({
         variables: { ...formState },
       });
 
       Auth.login(data.login.token);
-      navigate('/startShift');
+      if (formState.action === 'clockIn') {
+        navigate('/startShift');
+      } else if (formState.action === 'clockOut') {
+        navigate('/endShift');
+      } else {
+        console.log("Invalid user action");
+      }
+      
     } catch (e) {
       console.error(e);
     }
@@ -44,6 +51,7 @@ const Home = () => {
     setFormState({
       name: '',
       password: '',
+      action: ''
     });
   };
 
@@ -80,6 +88,7 @@ const Home = () => {
               className="btn clockBtn btn-primary btn-md"
               style={{ cursor: 'pointer' }}
               type="submit"
+              onClick={() => setFormState({...formState, action: 'clockIn'})}
             >
               Clock In
             </button>
@@ -88,6 +97,7 @@ const Home = () => {
               className="btn clockBtn btn-secondary btn-md"
               style={{ cursor: 'pointer' }}
               type="submit"
+              onClick={() => setFormState({...formState, action: 'clockOut'})}
             >
               Clock Out
             </button>

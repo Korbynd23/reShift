@@ -9,8 +9,8 @@ import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
-import Startshift from './pages/startShift';
-import Endshift from './pages/endShift';
+import StartShift from './pages/startShift';
+import EndShift from './pages/endShift';
 import Admin from './pages/adminPage';
 import Home from './pages/homeLogin';
 import AdminLogin from './pages/adminLogin';
@@ -72,11 +72,11 @@ function App() {
               />
               <Route 
                 path="/startShift" 
-                element={<Startshift />} 
+                element={<StartShift />} 
               />
               <Route 
                 path="/endShift" 
-                element={<Endshift />} 
+                element={<EndShift />} 
               />
             </Routes>
           </div>

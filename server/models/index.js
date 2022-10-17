@@ -1,4 +1,4 @@
 const Employee = require('./Employee');
-const Reaction = require('./Reaction');
+const { StartReaction, EndReaction } = require('./Reaction');
 
-module.exports = { Employee, Reaction }
+module.exports = { Employee, StartReaction, EndReaction }

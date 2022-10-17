@@ -1,6 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { Employee } = require('../models');
-const { Reaction } = require('../models');
+const { Employee, StartReaction, EndReaction } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -43,12 +42,12 @@ const resolvers = {
       },
 
       addReactionStart: async (parent, { startTimeValue }) => {
-        const startReaction = await Reaction.create({startTimeValue});
+        const startReaction = await StartReaction.create({startTimeValue});
         return {startReaction}
       },
 
       addReactionEnd: async (parent, { endTimeValue }) => {
-        const endReaction = await Reaction.create({endTimeValue});
+        const endReaction = await EndReaction.create({endTimeValue});
         return {endReaction}
       },
       

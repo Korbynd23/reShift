@@ -35,4 +35,11 @@ export const ADD_REACTION_START = gql`
     }
   }`
 
+export const ADD_REACTION_END = gql`
+  mutation addReactionEnd($reaction: Int!) {
+    addReactionEnd(endTimeValue: $reaction) {
+      endTimeValue
+    }
+  }`
+
 
